@@ -21,17 +21,9 @@
 				<a class="set-item-a"><span>修改账户密码</span><i class="iconfont i-left"></i></a>
 			</section>
 			<section class="set-item">
-				<a class="set-item-a">
-					<span>绑定微博</span>
-					<div class="switch"></div>
-				</a>
-				<a class="set-item-a">
-					<span>绑定微信</span>
-					<div class="switch"></div>
-				</a>
-				<a class="set-item-a">
-					<span>绑定GitHub</span>
-					<div class="switch"></div>
+				<a class="set-item-a" v-for="item in switchList">
+					<span>{{item.title}}</span>
+					<div class="switch" :class="{on:item.isShow}" @click="item.isShow=!item.isShow"></div>
 				</a>
 			</section>
 			<section class="set-item">
@@ -47,5 +39,27 @@
 			<a class="set-exit">退出账号</a>
 			<p class="set-dsc">乐趣 1.0 lequ.com</p>
 		</article>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<script>
+			new Vue({
+				el:".main",
+				data:{
+					switchList:[
+						{
+							title:"绑定微博",
+							isShow:false
+						},
+						{
+							title:"绑定微信",
+							isShow:true
+						},
+						{
+							title:"绑定GitHub",
+							isShow:false
+						},
+					]
+				}
+			})
+		</script>
 	</body>
 </html>

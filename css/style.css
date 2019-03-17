@@ -171,3 +171,6 @@ padding:0.2rem 0;box-sizing:border-box;width:3.6rem;text-align:center;}
 .set-exit{display:block;background:#fff;border-top:solid 0.05rem #E5E5E5;border-bottom:solid 0.05rem #e5e5e5;
 text-align:center;color:#f00;padding:0.8rem 0;margin-bottom:1.25rem;}
 .set-dsc{text-align:center;color:#999;font-size:12px;margin-bottom:2rem;}
+.switch{border:solid 0.1rem #E5E5E5;height:1.4rem;width:2.4rem;border-radius:1.5rem;display:flex;transition:all .3s ease;}
+.switch.on{background:#01C185;border-color:#01C185;justify-content:flex-end;}
+.switch:after{transition:all .3s ease;content:"";background:#fff;height:1.4rem;width:1.4rem;box-shadow:0 1px 4px #bcb9b9;border-radius:50%;}
