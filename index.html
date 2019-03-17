@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />	
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+	    <meta name="wap-font-scale" content="no">
+	    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>乐趣</title>	
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1090830_3ibfrt8mhx3.css"/>		
+	</head>
+	<body>
+		<main class="main">			
+			<ul id="user" class="user flex-auto">
+				<li v-for="(item,index) in userList" :id="item.id">
+					<a href="deail.html">
+						<img :src="item.avatar_url" />
+						<div class="user-info">
+							<p class="title">{{item.login}}</p>
+						</div>						
+					</a>
+				</li>
+			</ul>
+			<nav class="mod-nav">
+				<a href="./"><i class="iconfont i-home"></i>首页</a>
+				<a href="hot.html"><i class="iconfont i-hot"></i>动态</a>
+				<a href="find.html"><i class="iconfont i-find"></i>发现</a>
+				<a href="book.html"><i class="iconfont i-sd"></i>小册</a>
+				<a href="my.html"><i class="iconfont i-my"></i>我的</a>
+			</nav>
+			<div v-show="isShow" class="mod-show">
+				<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="60px" height="60px" viewBox="0 0 128 128" xml:space="preserve" smiling="fake"><g transform="rotate(315 64 64)"><circle cx="16" cy="64" r="16" fill="#000"/><circle cx="16" cy="64" r="14.344" fill="#000" transform="rotate(45 64 64)"/><circle cx="16" cy="64" r="12.531" fill="#000" transform="rotate(90 64 64)"/><circle cx="16" cy="64" r="10.75" fill="#000" transform="rotate(135 64 64)"/><circle cx="16" cy="64" r="10.063" fill="#000" transform="rotate(180 64 64)"/><circle cx="16" cy="64" r="8.063" fill="#000" transform="rotate(225 64 64)"/><circle cx="16" cy="64" r="6.438" fill="#000" transform="rotate(270 64 64)"/><circle cx="16" cy="64" r="5.375" fill="#000" transform="rotate(315 64 64)"/><animateTransform attributeName="transform" type="rotate" values="0 64 64;315 64 64;270 64 64;225 64 64;180 64 64;135 64 64;90 64 64;45 64 64" calcMode="discrete" dur="1s" repeatCount="indefinite"/></g></svg>
+			</div>
+		</main>
+		<script src="js/vue.js"></script>
+		<script src="js/axios.min.js" ></script>
+		<script src="js/user.js"></script>
+	</body>
+</html>

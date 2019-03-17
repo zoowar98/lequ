@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />	
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+	    <meta name="wap-font-scale" content="no">
+	    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<title>****的个人主页-乐趣</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1090830_wqds05x3k2k.css"/>
+	</head>
+	<body class="gbg">
+		<article class="main">
+			<section class="flex-auto">
+				<div class="user-detail">
+					 <img src="image/8.jpg" class="pic">
+					 <h3 class="name">用户名</h3>
+					 <p class="disc">描述</p>
+					 <button type="button" class="btn">关注</button>
+				</div><!--用户信息-->
+				<div class="mod-tag">
+					<span class="on">动态<b></b></span>
+					<span>专栏<b>9</b></span>
+					<span>沸点<b></b></span>
+					<span>分享<b></b></span>
+				</div>
+				<div class="data-box">
+					<div class="dynamic-list" v-for="(item,index) in list">
+						<div class="daynamic-list-cont">
+							<p class="time">3天前</p>
+							<div class="title"><span class="tital-tag">专栏</span>CSS尺寸单位介绍</div>
+							<div class="cont">
+								<p class="txt">它不是自然界的物理长度，指基本原色素及其灰度的基本编码。 css中的像素只是一个抽象的单...</p>
+							</div>
+						</div><!--内容-->
+						<div class="dynamic-list-action">
+							<span><i></i><b>24</b></span>
+							<span><i></i>2</span>
+						</div>
+					</div><!--动态列表-->
+				</div>			
+			</section>
+			<nav class="mod-nav">
+				<a href="index.html"><i class="iconfont i-home"></i>首页</a>
+				<a href="hot.html"><i class="iconfont i-hot"></i>动态</a>
+				<a href="find.html"><i class="iconfont i-find"></i>发现</a>
+				<a href="book.html"><i class="iconfont i-sd"></i>小册</a>
+				<a href="my.html"><i class="iconfont i-my"></i>我的</a>
+			</nav>
+		</article>
+		<script type="text/javascript" src="../js/vue.js" ></script>
+		<script type="text/javascript" src="js/axios.min.js" ></script>
+		<script type="text/javascript">
+			new Vue({
+				el:".main",
+				data:{
+					list:[]
+				},
+				mounted:function(){
+					this.$nextTick(function(){
+						this.getCont();
+					});
+					
+				},
+				methods:{
+					getCont:function(){
+						this.list.push(1,1,3,4,5,6,78,9,10,11,12,13,14,15,16,17,18,19,120,20);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

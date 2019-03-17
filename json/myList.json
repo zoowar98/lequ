@@ -1,0 +1,42 @@
+{
+	"myList":[
+	          
+          {
+        	  "iconfont":["iconfont","i-lingdang"],
+        	  "text":"消息中心",
+        	  "num":""
+          },
+          {
+        	  "iconfont":["iconfont","i-dianzan"],
+        	  "text":"我赞过的",
+        	  "num":6
+          },
+          {
+        	  "iconfont":["iconfont","i-start"],
+        	  "text":"收藏集",
+        	  "num":3
+          },
+          {
+        	  "iconfont":["iconfont","i-gwd"],
+        	  "text":"已购小册",
+        	  "num":0
+          },
+          {
+        	  "iconfont":["iconfont","i-qb"],
+        	  "text":"我的钱包",
+        	  "num":0
+          },
+          {
+        	  "iconfont":["iconfont","i-find"],
+        	  "text":"阅读过的文章",
+        	  "num":325
+          },
+          {
+        	  "iconfont":["iconfont","i-tag"],
+        	  "text":"标签管理",
+        	  "num":29
+          }
+	          
+	 ]
+
+}

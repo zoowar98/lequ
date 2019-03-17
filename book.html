@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />	
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+	    <meta name="wap-font-scale" content="no">
+	    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1090830_wqds05x3k2k.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<title>小册</title>
+	</head>
+	<body>
+		<article class="main">
+			<section class="flex-auto">
+				<div class="book-tag">
+					<span class="on">全部</span>
+					<span>已购</span>
+				</div>
+				<ul class="book-ul">
+					<li class="book-li" v-for="(item,index) in bookList" :key="index">
+						<img :src="item.url" class="book-li-pic">
+						<div class="book-li-dsc">
+							<h3 class="title">{{item.title}}</h3>
+							<p class="author">{{item.author}}</p>
+							<p class="data">
+								<span><b class="data-ys">预售</b>{{item.ys}}小节</span>
+								<span>{{item.purchased}}已购买</span>
+							</p>
+						</div>
+						<span class="book-li-price">&yen;{{item.price}}</span>
+					</li>
+				</ul>
+			</section>
+			<nav class="mod-nav">
+				<a href="index.html"><i class="iconfont i-home"></i>首页</a>
+				<a href="hot.html"><i class="iconfont i-hot"></i>动态</a>
+				<a href="find.html"><i class="iconfont i-find"></i>发现</a>
+				<a href="book.html"><i class="iconfont i-sd"></i>小册</a>
+				<a href="my.html"><i class="iconfont i-my"></i>我的</a>
+			</nav>
+		</article>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<script src="js/axios.min.js"></script>
+		<script>
+			new Vue({
+				el:".main",
+				data:{
+					bookList:[]
+				},
+				mounted:function(){
+					this.$nextTick(function(){
+						this.getBook();
+					})
+				},
+				methods:{
+					getBook:function(){
+						var vm=this;
+						axios.get("json/bookList.json").then(function(res){
+							console.log(res.data);
+							vm.bookList=res.data.bookList;
+						});
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

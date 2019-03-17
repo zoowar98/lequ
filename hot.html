@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />	
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no">
+	    <meta name="wap-font-scale" content="no">
+	    <meta http-equiv="x-dns-prefetch-control" content="on">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1090830_wqds05x3k2k.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<title>热门</title>
+	</head>
+	<body>
+		<div class="main">
+			 <ul class="mod-hot flex-auto">
+			 	<li v-for="(item,index) in hotlist" :id="index">
+			 		<a class="mod-hot-a">
+			 			<h2 class="title">{{item.title}}</h2>
+			 			<p class="disc">{{item.disc}}</p>
+			 			<div class="time-start">
+			 				<span class="time"><i class="iconfont i-time"></i>{{item.time}}</span>
+			 				<span class="start"><i class="iconfont i-start"></i>{{item.start}}</span>
+			 			</div>		
+			 			<div class="tag">
+			 				<span v-for="tag in item.tag">{{tag}}</span>
+			 			</div>
+			 		</a>
+			 	</li>
+			 </ul>
+		     <nav class="mod-nav">
+				<a href="index.html"><i class="iconfont i-home"></i>首页</a>
+				<a href="hot.html"><i class="iconfont i-hot"></i>动态</a>
+				<a href="find.html"><i class="iconfont i-find"></i>发现</a>
+				<a href="book.html"><i class="iconfont i-sd"></i>小册</a>
+				<a href="my.html"><i class="iconfont i-my"></i>我的</a>
+			</nav>
+		</div>
+		<script src="js/vue.js" ></script>
+		<script src="js/axios.min.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:".main",
+				data:{
+					hotlist:[]
+				},
+				mounted:function(){
+					this.$nextTick(function(){
+						this.gethot();
+					})
+				},
+				methods:{
+					gethot:function(){
+						var vm=this;
+						axios.get("json/hot.json").then(function(res){
+							console.log(res);
+							vm.hotlist=res.data.hotlist;
+						});
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
